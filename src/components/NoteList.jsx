@@ -1,12 +1,11 @@
 import React from "react";
 import Note from "./Note";
-import notesData from "../notes";
 
-export default function NoteList() {
+export default function NoteList(props) {
 	return (
 		<div>
-			{notesData.map((note) => (
-				<Note key={note.key} title={note.title} content={note.content} />
+			{props.listItems.map((note, index) => (
+				<Note key={index} title={note.title} text={note.text} />
 			))}
 		</div>
 	);
