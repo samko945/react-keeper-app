@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function NewNoteForm() {
+export default function NewNoteForm(props) {
 	const [title, setTitle] = useState("");
 	function updateTitle(event) {
 		const newTitle = event.target.value;
@@ -13,10 +13,25 @@ export default function NewNoteForm() {
 		setText(newText);
 	}
 	return (
-		<form>
-			<input value={title} onChange={updateTitle} />
-			<textarea value={text} onChange={updateText} />
-			<button>Add</button>
+		<form
+			onSubmit={(event) => {
+				event.preventDefault();
+			}}
+		>
+			<input value={title} onChange={updateTitle} placeholder="Title" />
+			<textarea value={text} onChange={updateText} placeholder="Take a note..." />
+			<button
+				onClick={() => {
+					props.addNote({
+						title,
+						text,
+					});
+					setTitle("");
+					setText("");
+				}}
+			>
+				Add
+			</button>
 		</form>
 	);
 }
