@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 html {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Manrope";
 }
 body {
 	background: #eee;
@@ -20,7 +20,6 @@ header {
 
 header h1 {
 	color: #fff;
-	font-family: "McLaren", cursive;
 	font-weight: 200;
 }
 
@@ -39,12 +38,13 @@ footer p {
 	background: #fff;
 	border-radius: 7px;
 	box-shadow: 0 2px 5px #ccc;
-	padding: 10px;
+	padding: 1rem;
 	width: 240px;
 	margin: 16px;
 	float: left;
 }
 .note h1 {
+	font-weight: 600;
 	font-size: 1.1em;
 	margin-bottom: 6px;
 }
@@ -76,6 +76,7 @@ form {
 	border-radius: 7px;
 	box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
+
 form input,
 form textarea {
 	width: 100%;
@@ -83,9 +84,10 @@ form textarea {
 	padding: 4px;
 	outline: none;
 	font-size: 1.2em;
-	font-family: inherit;
+	font-family: "Manrope";
 	resize: none;
 }
+
 form button {
 	position: absolute;
 	right: 18px;
@@ -99,4 +101,22 @@ form button {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 	outline: none;
+}
+
+.note-options {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.note-options span {
+	cursor: pointer;
+	font-size: 0.85rem;
+	opacity: 50%;
+}
+.note-options span:hover {
+	opacity: 100%;
+}
+
+.delete-note {
+	color: red;
 }

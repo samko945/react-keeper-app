@@ -9,11 +9,17 @@ export default function App() {
 	function addNote(note) {
 		setNotes([...notes, { title: note.title, text: note.text }]);
 	}
+	function deleteNote(id) {
+		const filteredArray = notes.filter((item, index) => {
+			return id !== index;
+		});
+		setNotes(filteredArray);
+	}
 	return (
 		<div>
 			<Header />
 			<NewNoteForm addNote={addNote} />
-			<NoteList listItems={notes} />
+			<NoteList listItems={notes} deleteNote={deleteNote} />
 			<Footer />
 		</div>
 	);
