@@ -1,4 +1,5 @@
 import React from "react";
+import ClearIcon from "@material-ui/icons/Clear";
 
 export default function Note(props) {
 	return (
@@ -12,7 +13,7 @@ export default function Note(props) {
 						props.deleteNote(props.id);
 					}}
 				>
-					delete
+					<ClearIcon fontSize="large" />
 				</span>
 			</div>
 		</div>
